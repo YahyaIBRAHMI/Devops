@@ -1,1 +1,12 @@
-develop
+dpkg --configure -a
+apt --fix-broken install
+apt update -y
+apt upgrade -y
+apt remove --purge lxd lxd-client r-base-dev r-base-core r-recommended nodejs 
+apt remove --purge grafana
+apt list --upgradable
+apt autoremove --purge -y
+reboot
+do-release-upgrade -f DistUpgradeViewNonInteractive  
+update-locale LC_ALL=C.UTF-8
+
